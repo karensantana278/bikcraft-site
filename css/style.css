@@ -1,0 +1,11 @@
+@import './global/global.css';
+@import './utilidades/tipografia.css';
+@import './utilidades/cores.css';
+@import './global/header.css';
+
+/*utilidades*/
+@import './utilidades/componentes.css';
+
+
+/*home*/
+@import './home/introducao.css';
