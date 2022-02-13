@@ -43,6 +43,7 @@ console.log(perguntas)
 
 
 //script para clicar na imagem e trocar a imagem principal da galeria de bicicletas.
+//obs, no nosso css definimos que a primeira imagem teria tamanho maior do grid e as proximas seriam menores, por isto utilizamos o prepend para trocar a ordem das imagens no html e fazer o efeito de galeria, porém como isso não faz sentido para telas menores, vamos utilizar o matchMedia para ver o tamanho da tela e um if para determinar se o script será executado ou não, com base no tamanho da tela.
 
 const galeria = document.querySelectorAll('.bicicleta-imagens img')
 const galeriaContainer = document.querySelector('.bicicleta-imagens')
@@ -57,4 +58,9 @@ galeria.forEach((img)=> {
     })
 })
 
-//obs, no nosso css definimos que a primeira imagem teria tamanho maior do grid e as proximas seriam menores, por isto utilizamos o prepend para trocar a ordem das imagens no html e fazer o efeito de galeria, porém como isso não faz sentido para telas menores, vamos utilizar o matchMedia para ver o tamanho da tela e um if para determinar se o script será executado ou não, com base no tamanho da tela.
+//plugin de animação
+//1º verificamos se existe esse script na pagina, pois adicionamos apenas no index.
+if(window.SimpleAnime){
+    new SimpleAnime()
+}
+
