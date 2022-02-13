@@ -25,4 +25,18 @@ parametros.forEach(parametro => {
     }
 })
 
-//script para clicar e abrir as perguntas frequentes, deixando apenas a primeira aberta.
+//script para clicar e abrir as perguntas frequentes, deixando apenas a primeira aberta, obs..1º alterar a estrutura do html conforme a parte de perguntas frequentes.
+
+const perguntas = document.querySelectorAll('.perguntas button')
+
+perguntas.forEach(pergunta => {
+    pergunta.addEventListener('click', event => {
+        const pergunta = event.currentTarget
+        const controls = pergunta.getAttribute('aria-controls')
+        const resposta = document.getElementById(controls)
+        resposta.classList.toggle('ativa')
+        const ativa = resposta.classList.contains('ativa')
+        pergunta.setAttribute('aria-expanded', ativa)  
+    })
+})
+console.log(perguntas)
